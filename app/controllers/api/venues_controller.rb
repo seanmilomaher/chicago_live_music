@@ -1,4 +1,5 @@
 class Api::VenuesController < ApplicationController
+
   def create
     venue = Venue.new(
       name: params[:name],
@@ -14,4 +15,10 @@ class Api::VenuesController < ApplicationController
       render json: { errors: venue.errors.full_messages }, status: :bad_request
     end
   end
+
+  def index
+    @venues = Venue.all
+    render "index.json.jb"
+  end
+
 end
