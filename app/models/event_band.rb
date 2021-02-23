@@ -1,0 +1,2 @@
+class EventBand < ApplicationRecord
+end
