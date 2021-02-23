@@ -26,4 +26,17 @@ class Api::VenuesController < ApplicationController
     render "show.json.jb"
   end
 
+  def update
+    @venue = Venue.find_by(id: params[:id])
+    @venue.name = params[:name] || @venue.name
+    @venue.email = params[:email] || @venue.email
+    @venue.address = params[:address] || @venue.address
+    @venue.image = params[:image] || @venue.image
+    if @venue.save
+      render "show.json.jb"
+    else
+      render json: { errors: @venue.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
 end

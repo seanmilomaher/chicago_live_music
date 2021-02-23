@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post "/venues" => "venues#create"
     get "/venues" => "venues#index"
     get "/venues/:id" => "venues#show"
+    patch "/venues/:id" => "venues#update"
 
     post "/sessions" => "sessions#create"
     
