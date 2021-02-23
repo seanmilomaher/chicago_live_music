@@ -1,0 +1,7 @@
+{
+  id: venue.id,
+  email: venue.email,
+  name: venue.name,
+  address: venue.address,
+  image: venue.image
+}

@@ -1,1 +1,3 @@
-@venues
+@venues.map do |venue|
+  render partial: "venue.json.jb", locals: {venue: venue}
+end
