@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     patch "/bands/:id" => "bands#update"
     delete "/bands/:id" => "bands#destroy"
 
+    post "/events" => "events#create"
+    get "/events" => "events#index"
+    get "/events/:id" => "events#show"
+    patch "/events/:id" => "events#update"
+    delete "/events/:id" => "events#destroy"
 
     post "/sessions" => "sessions#create"
     

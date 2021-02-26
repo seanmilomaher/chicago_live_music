@@ -1,0 +1,11 @@
+{
+  id: event.id,
+  name: event.name,
+  start_time: event.start_time,
+  end_time: event.end_time,
+  date: event.date,
+  cover: event.cover,
+  age_limit: event.age_limit,
+  image: event.image,
+  venue_id: event.venue_id
+}
