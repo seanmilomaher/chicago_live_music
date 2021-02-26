@@ -12,7 +12,7 @@ class Api::VenuesController < ApplicationController
     if venue.save
       render json: { message: "Venue created successfully" }, status: :created
     else
-      render json: { errors: venue.errors.full_messages }, status: :bad_request
+      render json: { errors: venue.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -37,6 +37,12 @@ class Api::VenuesController < ApplicationController
     else
       render json: { errors: @venue.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @venue = Venue.find_by(id: params[:id])
+    @venue.destroy
+    render json: {message: "Venue successfully deleted"}
   end
 
 end

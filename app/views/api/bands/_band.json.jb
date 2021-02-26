@@ -1,0 +1,8 @@
+{
+  id: band.id,
+  name: band.name,
+  from_city: band.from_city,
+  from_state: band.from_state,
+  image: band.image,
+  bio: band.bio,
+}

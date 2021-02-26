@@ -1,0 +1,3 @@
+@bands.map do |band|
+  render partial: "band.json.jb", locals: {band: band}
+end
