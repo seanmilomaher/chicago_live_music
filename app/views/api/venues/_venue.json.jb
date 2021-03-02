@@ -3,5 +3,5 @@
   name: venue.name,
   email: venue.email,
   address: venue.address,
-  image: venue.image
+  image: venue.image,
 }
