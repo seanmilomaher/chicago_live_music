@@ -1,5 +1,7 @@
 class Api::BandsController < ApplicationController
 
+  
+
   def create
     @band = Band.new(
       name: params[:name],
