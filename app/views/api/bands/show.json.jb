@@ -1,1 +1,5 @@
-render partial: "band.json.jb", locals: {band: @band}
+band = render partial: "band.json.jb", locals: {band: @band}
+band[:events] = @band.events.map do |event|
+  render partial: "api/events/event.json.jb", locals: { event: event }
+end
+band
