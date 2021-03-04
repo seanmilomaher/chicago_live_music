@@ -10,7 +10,7 @@ class Api::VenuesController < ApplicationController
       address: params[:address],
     )
     if venue.save
-      render 'show.json.jb'
+      render "show.json.jb"
     else
       render json: { errors: venue.errors.full_messages }, status: :unprocessable_entity
     end
