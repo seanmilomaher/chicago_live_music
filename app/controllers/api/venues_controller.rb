@@ -7,10 +7,10 @@ class Api::VenuesController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       image: params[:image],
-      address: params[:address]
+      address: params[:address],
     )
     if venue.save
-      render json: { message: "Venue created successfully" }, status: :created
+      render 'show.json.jb'
     else
       render json: { errors: venue.errors.full_messages }, status: :unprocessable_entity
     end

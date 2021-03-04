@@ -4,4 +4,6 @@
   email: venue.email,
   address: venue.address,
   image: venue.image,
+  latitude: venue.latitude,
+  longitude: venue.longitude
 }

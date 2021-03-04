@@ -2,7 +2,6 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(
-      id: params[:id],
       name: params[:name],
       start_time: params[:start_time],
       end_time: params[:end_time],
