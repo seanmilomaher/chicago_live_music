@@ -1,5 +1,7 @@
 class Api::VenuesController < ApplicationController
 
+  before_action :authenticate_venue, except: [:index, :show, :create]
+
   def create
     @venue = Venue.new(
       name: params[:name],
@@ -32,7 +34,7 @@ class Api::VenuesController < ApplicationController
     @venue.email = params[:email] || @venue.email
     @venue.address = params[:address] || @venue.address
     @venue.image = params[:image] || @venue.image
-    if @venue.save
+    if current_venue.id == @venue.id && @venue.save
       render "show.json.jb"
     else
       render json: { errors: @venue.errors.full_messages }, status: :unprocessable_entity
@@ -40,7 +42,7 @@ class Api::VenuesController < ApplicationController
   end
 
   def destroy
-    @venue = Venue.find_by(id: params[:id])
+    @venue = Venue.find_by(id: params[:id]) # maybe change this to only be available to the current venue?
     @venue.destroy
     render json: {message: "Venue successfully deleted"}
   end

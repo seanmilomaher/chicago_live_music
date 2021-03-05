@@ -1,5 +1,7 @@
 class Api::EventsController < ApplicationController
 
+  before_action :authenticate_venue, except: [:index, :show]
+
   def create
     @event = Event.new(
       name: params[:name],
@@ -11,7 +13,7 @@ class Api::EventsController < ApplicationController
       image: params[:image],
       venue_id: params[:venue_id]
     )
-    if @event.save
+    if current_venue.id == @venue.id && @event.save
       render "show.json.jb"
     else
       render json: { errors: @event.errors.full_messages },
@@ -39,7 +41,7 @@ class Api::EventsController < ApplicationController
     @event.age_limit = params[:age_limit] || @event.age_limit
     @event.image = params[:image] || @event.image
     @event.venue_id = params[:venue_id] || @event.venue_id
-    if @event.save
+    if current_venue.id == @venue.id && @event.save
       render "show.json.jb"
     else
       render json: { errors: @event.errors.full_messages },

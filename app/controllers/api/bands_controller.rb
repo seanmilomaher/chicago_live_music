@@ -1,5 +1,7 @@
 class Api::BandsController < ApplicationController
 
+  before_action :authenticate_venue, except: [:index, :show]
+
   def create
     @band = Band.new(
       name: params[:name],
