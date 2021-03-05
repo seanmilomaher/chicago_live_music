@@ -5,5 +5,5 @@ class Venue < ApplicationRecord
   after_validation :geocode
 
   has_secure_password
-  validates :name, :address, :image, :email, presence: true, uniqueness: true
+  # validates :name, :address, :image, :email, presence: true, uniqueness: true
 end

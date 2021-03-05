@@ -42,9 +42,13 @@ class Api::VenuesController < ApplicationController
   end
 
   def destroy
-    @venue = Venue.find_by(id: params[:id]) # maybe change this to only be available to the current venue?
-    @venue.destroy
-    render json: {message: "Venue successfully deleted"}
+    if current_venue.id == params[:id].to_i
+      @venue = Venue.find_by(id: params[:id]) # maybe change this to only be available to the current venue?
+      @venue.destroy
+      render json: {message: "Venue successfully deleted"}
+    else
+      render json: {}, status: :unprocessable_entity
+    end
   end
 
 end
