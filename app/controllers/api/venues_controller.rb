@@ -1,7 +1,7 @@
 class Api::VenuesController < ApplicationController
 
   def create
-    venue = Venue.new(
+    @venue = Venue.new(
       name: params[:name],
       email: params[:email],
       password: params[:password],
@@ -9,7 +9,7 @@ class Api::VenuesController < ApplicationController
       image: params[:image],
       address: params[:address],
     )
-    if venue.save
+    if @venue.save
       render "show.json.jb"
     else
       render json: { errors: venue.errors.full_messages }, status: :unprocessable_entity
