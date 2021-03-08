@@ -15,10 +15,10 @@ class Api::EventsController < ApplicationController
     )
     if @event.save
       event_band_info = {
-        band_ids: params[:band_ids],
-        start_times: params[:start_times],
-        end_times: params[:end_times],
-        orders: params[:orders]
+        band_ids: eval(params[:band_ids]),
+        start_times: eval(params[:start_times]),
+        end_times: eval(params[:end_times]),
+        orders: eval(params[:orders])
       }
       number_of_bands = event_band_info[:band_ids].length
       index = 0
