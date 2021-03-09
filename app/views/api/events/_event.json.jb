@@ -1,9 +1,9 @@
 {
   id: event.id,
   name: event.name,
-  start_time: event.start_time,
-  end_time: event.end_time,
-  date: event.date,
+  start_time: event.start_time.strftime("%m/%d/%Y %I:%M%p"),
+  end_time: event.end_time.strftime("%m/%d/%Y %I:%M%p"),
+  date: event.date.strftime("%m/%d/%Y %I:%M%p"),
   cover: event.cover,
   age_limit: event.age_limit,
   image: event.image,

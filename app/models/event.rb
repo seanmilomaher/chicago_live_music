@@ -5,4 +5,5 @@ class Event < ApplicationRecord
 
   # validates :name, :venue_id, :start_time, :end_time, :date, :cover, :age_limit, :image, presence: true
   # validates :name, uniqueness: true
+
 end
