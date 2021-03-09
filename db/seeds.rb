@@ -55,65 +55,65 @@ events = Event.create(
     {
       name: "the Roof Dogs CD release w/ The Bascinets",
       venue_id: 1,
-      start_time: Time.new,
-      end_time: Time.new,
-      date: Date.new,
+      start_time: "8:00PM",
+      end_time: "10:00PM",
+      date: "2021-03-27",
       cover: "$10",
       age_limit: "21+",
       image: "https://i1.wp.com/imperfectfifth.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-6.41.07-PM.png?fit=556%2C370"
     },
-    # {
-    #   name: "The Bascinets Play Forever",
-    #   venue_id: 2,
-    #   start_time: ,
-    #   end_time: ,
-    #   date: ,
-    #   cover: "$7",
-    #   age_limit: "18+",
-    #   image: "https://www.columbusalive.com/storyimage/OH/20200827/ENTERTAINMENT/200828820/AR/0/AR-200828820.jpg?MaxW=600"
-    # },
-    # {
-    #   name: "Tricot: Live at Concord Hall",
-    #   venue_id: 3,
-    #   start_time: "7:30PM",
-    #   end_time: "9:00",
-    #   date: ,
-    #   cover: "$15",
-    #   age_limit: "21+",
-    #   image: "https://i.ytimg.com/vi/-rZWdolJfgk/maxresdefault.jpg"
-    # },
+    {
+      name: "The Bascinets Play Forever",
+      venue_id: 2,
+      start_time: "10:00PM",
+      end_time: "2:00AM",
+      date: "2021-06-30",
+      cover: "$7",
+      age_limit: "18+",
+      image: "https://www.columbusalive.com/storyimage/OH/20200827/ENTERTAINMENT/200828820/AR/0/AR-200828820.jpg?MaxW=600"
+    },
+    {
+      name: "Tricot: Live at Concord Hall",
+      venue_id: 3,
+      start_time: "7:30PM",
+      end_time: "9:00PM",
+      date: "2021-04-03",
+      cover: "$15",
+      age_limit: "21+",
+      image: "https://i.ytimg.com/vi/-rZWdolJfgk/maxresdefault.jpg"
+    },
   ]
 )
 
-# event_bands = EventBand.create(
-#   [
-#     {
-#       band_id: 1,
-#       event_id: 1,
-#       start_time: "8:45PM",
-#       end_time: "10:00PM",
-#       order: "2nd"
-#     },
-#     {
-#       band_id: 2,
-#       event_id: 1,
-#       start_time: "8:00PM",
-#       end_time: "8:30PM",
-#       order: "1st"
-#     },
-#     {
-#       band_id: 2,
-#       event_id: 2,
-#       start_time: "8:00PM",
-#       end_time: "whenever",
-#       order: "1st"
-#     },
-#     {
-#       band_id: 3,
-#       event_id: 3,
-#       start_time: "7:30PM",
-#       end_time: "9:00PM",
-#       order: "1st"
-#     },
-#   ]
-# )
+event_bands = EventBand.create(
+  [
+    {
+      band_id: 1,
+      event_id: 1,
+      start_time: "8:45PM",
+      end_time: "10:00PM",
+      order: "2nd"
+    },
+    {
+      band_id: 2,
+      event_id: 1,
+      start_time: "8:00PM",
+      end_time: "8:30PM",
+      order: "1st"
+    },
+    {
+      band_id: 2,
+      event_id: 2,
+      start_time: "10:00PM",
+      end_time: "2:00AM",
+      order: "1st"
+    },
+    {
+      band_id: 3,
+      event_id: 3,
+      start_time: "7:30PM",
+      end_time: "9:00PM",
+      order: "1st"
+    },
+  ]
+)
