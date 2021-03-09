@@ -11,7 +11,7 @@ class Api::EventsController < ApplicationController
       cover: params[:cover],
       age_limit: params[:age_limit],
       image: params[:image],
-      venue_id: params[:venue_id]
+      venue_id: current_venue.id
     )
     if @event.save
       event_bands = eval(params[:event_bands])
@@ -51,7 +51,7 @@ class Api::EventsController < ApplicationController
       @event.cover = params[:cover] || @event.cover
       @event.age_limit = params[:age_limit] || @event.age_limit
       @event.image = params[:image] || @event.image
-      @event.venue_id = params[:venue_id] || @event.venue_id
+      @event.venue_id = current_venue.id || @event.venue_id
       if @event.save
         render "show.json.jb"
       else
