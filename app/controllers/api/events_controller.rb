@@ -14,23 +14,15 @@ class Api::EventsController < ApplicationController
       venue_id: params[:venue_id]
     )
     if @event.save
-      event_band_info = {
-        band_ids: eval(params[:band_ids]),
-        start_times: eval(params[:start_times]),
-        end_times: eval(params[:end_times]),
-        orders: eval(params[:orders])
-      }
-      number_of_bands = event_band_info[:band_ids].length
-      index = 0
-      while index < number_of_bands
+      event_bands = eval(params[:event_bands])
+      event_bands.each do |event_band|
         EventBand.create(
-          band_id: event_band_info[:band_ids][index],
+          band_id: event_band[:band_id],
           event_id: @event.id,
-          start_time: event_band_info[:start_times][index],
-          end_time: event_band_info[:end_times][index],
-          order: event_band_info[:orders][index]
+          start_time: event_band[:start_time],
+          end_time: event_band[:end_time],
+          order: event_band[:order]
         )
-        index += 1
       end
       render "show.json.jb"
     else
