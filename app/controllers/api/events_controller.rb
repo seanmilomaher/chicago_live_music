@@ -5,7 +5,7 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(
       name: params[:name],
-      start_time: Time.parse(params[:start_time]),
+      start_time: params[:start_time],
       end_time: params[:end_time],
       date: Date.parse(params[:date]),
       cover: params[:cover],
@@ -51,7 +51,6 @@ class Api::EventsController < ApplicationController
       @event.cover = params[:cover] || @event.cover
       @event.age_limit = params[:age_limit] || @event.age_limit
       @event.image = params[:image] || @event.image
-
       if @event.save
         @event.event_bands.each do |event_band|
           event_band.destroy
@@ -66,8 +65,6 @@ class Api::EventsController < ApplicationController
             order: event_band[:order]
           )
         end
-        
-        p "==================#{@event.event_bands.first}"
         render "show.json.jb"
       else
         render json: { errors: @event.errors.full_messages },
