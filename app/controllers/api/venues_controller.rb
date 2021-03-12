@@ -30,14 +30,18 @@ class Api::VenuesController < ApplicationController
 
   def update
     @venue = Venue.find_by(id: params[:id])
-    @venue.name = params[:name] || @venue.name
-    @venue.email = params[:email] || @venue.email
-    @venue.address = params[:address] || @venue.address
-    @venue.image = params[:image] || @venue.image
-    if current_venue.id == @venue.id && @venue.save
-      render "show.json.jb"
+    if current_venue.id == @venue.id
+      @venue.name = params[:name] || @venue.name
+      @venue.email = params[:email] || @venue.email
+      @venue.address = params[:address] || @venue.address
+      @venue.image = params[:image] || @venue.image
+      if @venue.save
+        render "show.json.jb"
+      else
+        render json: { errors: @venue.errors.full_messages }, status: :unprocessable_entity
+      end
     else
-      render json: { errors: @venue.errors.full_messages }, status: :unprocessable_entity
+      render json: {}, status: :unauthorized
     end
   end
 
@@ -47,7 +51,7 @@ class Api::VenuesController < ApplicationController
       @venue.destroy
       render json: {message: "Venue successfully deleted"}
     else
-      render json: {}, status: :unprocessable_entity
+      render json: {}, status: :unauthorized
     end
   end
 
