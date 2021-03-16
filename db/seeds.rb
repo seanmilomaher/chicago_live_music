@@ -9,7 +9,7 @@ venues = Venue.create(
     },
     {
       name: "The Aragon Ballroom",
-      address: "1106 W Lawrence, Chicago IL",
+      address: "1106 W Lawrence Ave, Chicago IL",
       image: "https://www.chicagotribune.com/resizer/GdSPnh878TfLxR2CP0IaHXsQpAE=/1200x0/right/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/HKHFGTHF4JBDDM4ZDEMNGGEU7Y.jpg",
       email: "aragonballroom@gmail.com",
       password: "password",
