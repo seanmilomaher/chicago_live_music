@@ -14,7 +14,7 @@ class Api::EventsController < ApplicationController
       venue_id: current_venue.id
     )
     if @event.save
-      event_bands = eval(params[:event_bands])
+      event_bands = params[:event_bands]
       event_bands.each do |event_band|
         EventBand.create(
           band_id: event_band[:band_id],
@@ -55,7 +55,7 @@ class Api::EventsController < ApplicationController
         @event.event_bands.each do |event_band|
           event_band.destroy
         end
-        event_bands = eval(params[:event_bands])
+        event_bands = params[:event_bands]
         event_bands.each do |event_band|
           EventBand.create(
             band_id: event_band[:band_id],
