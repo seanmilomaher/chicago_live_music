@@ -8,6 +8,7 @@ event[:bands] = @event.event_bands.map do |event_band|
   band_hash = render partial: "api/bands/band.json.jb", locals: {band: event_band.band}
   band_hash[:start_time] = event_band.start_time
   band_hash[:end_time] = event_band.end_time
+  band_hash[:order] = event_band.order
   band_hash
 end
 
