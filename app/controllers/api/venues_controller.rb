@@ -20,6 +20,7 @@ class Api::VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    @mapbox_access_token = Rails.application.credentials.mapbox_api[:mapbox_access_token]
     render "index.json.jb"
   end
 
