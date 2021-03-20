@@ -55,8 +55,8 @@ events = Event.create(
     {
       name: "the Roof Dogs CD release w/ The Bascinets",
       venue_id: 1,
-      start_time: "2021-03-27 20:00:00",
-      end_time: "2021-03-27 22:00:00",
+      start_time: "8:00PM",
+      end_time: "10:00PM",
       date: "2021-03-27",
       cover: "$10",
       age_limit: "21+",
@@ -65,8 +65,8 @@ events = Event.create(
     {
       name: "The Bascinets Play Forever",
       venue_id: 2,
-      start_time: "2021-06-30 22:00:00",
-      end_time: "2021-07-01 02:00:00",
+      start_time: "10:00PM",
+      end_time: "2:00AM",
       date: "2021-06-30",
       cover: "$7",
       age_limit: "18+",
@@ -75,8 +75,8 @@ events = Event.create(
     {
       name: "Tricot: Live at Concord Hall",
       venue_id: 3,
-      start_time: "2021-04-03 19:30:00",
-      end_time: "2021-04-03 21:00:00",
+      start_time: "7:30PM",
+      end_time: "9:00PM",
       date: "2021-04-03",
       cover: "$15",
       age_limit: "21+",
@@ -90,29 +90,29 @@ event_bands = EventBand.create(
     {
       band_id: 1,
       event_id: 1,
-      start_time: "2021-03-27 20:45:00",
-      end_time: "2021-03-27 22:00:00",
+      start_time: "8:45PM",
+      end_time: "10:00PM",
       order: "2nd"
     },
     {
       band_id: 2,
       event_id: 1,
-      start_time: "2021-03-27 20:00:00",
-      end_time: "2021-03-27 20:30:00",
+      start_time: "8:00PM",
+      end_time: "8:30PM",
       order: "1st"
     },
     {
       band_id: 2,
       event_id: 2,
-      start_time: "2021-06-30 22:00:00",
-      end_time: "2021-07-01 02:00:00",
+      start_time: "10:00PM",
+      end_time: "2:00AM",
       order: "1st"
     },
     {
       band_id: 3,
       event_id: 3,
-      start_time: "2021-04-03 19:30:00",
-      end_time: "2021-04-03 21:00:00",
+      start_time: "7:30PM",
+      end_time: "9:00PM",
       order: "1st"
     },
   ]
