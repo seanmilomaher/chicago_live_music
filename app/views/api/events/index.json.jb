@@ -2,7 +2,7 @@
   event_hash = render partial: "event.json.jb", locals: {event: event}
   event_hash[:venue] = event.venue
   event_hash[:bands] = event.event_bands.map do |event_band|
-    event_band.band.name
+    event_band.band
   end
   event_hash
 end
